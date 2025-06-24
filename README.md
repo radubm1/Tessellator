@@ -1,8 +1,6 @@
 # Tessellator
 An evaluation engine based on TMP that supports a declarative style of fractal (i.e. tile, tiling) programming
 
-Absolutely, Radu! Here's an annotated Markdown file that explains each part of your `meta_func.hpp` header—great example of type-level programming in C++:
-
 ---
 
 # `meta_func.hpp` – Annotated
@@ -145,5 +143,3 @@ void print_result() {
 - Helps observe compile-time evaluated `Int<N>` values at runtime.
 
 ---
-
-If you'd like, I can also help build a sample use case or test suite for this. Want to explore that next?
