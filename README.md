@@ -143,3 +143,81 @@ void print_result() {
 - Helps observe compile-time evaluated `Int<N>` values at runtime.
 
 ---
+
+---
+
+# 🧠 Metaprogramming Playground – Usage Examples for Tessellator
+
+This document demonstrates how to use the type-level functions defined in `meta_func.hpp` with real-world examples. Each snippet performs computations *at compile time* using C++ template metaprogramming.
+
+---
+
+## 🧮 Example 1: Basic Arithmetic Expression
+
+```cpp
+using ExprType = Expr<Add, Int<3>, Int<4>>;
+print_result<Eval<ExprType>::result>();  // Outputs: 7
+```
+
+**What it does:** Defines a type-level expression `3 + 4`, evaluates it at compile time, and prints the result.
+
+---
+
+## 🔁 Example 2: Compose Metafunctions
+
+```cpp
+using Triple = Compose<DoubleFn, Add3<Int<1>>>;
+print_result<Apply<Triple, Int<5>>::result>();  // (5 + 1) * 2 = 12
+```
+
+**What it does:** Composes two metafunctions:
+- `Add3<Int<1>>`: adds 1 to any input
+- `DoubleFn`: doubles the result
+
+Resulting in: `(5 + 1) * 2 = 12`.
+
+---
+
+## 🗃️ Example 3: Map a Function Over a List
+
+```cpp
+using MyList = List<Int<1>, Int<2>, Int<3>>;
+using Result = Map<DoubleFn, MyList>::result;
+
+print_result<At<0, Result>::result>();  // 2
+print_result<At<1, Result>::result>();  // 4
+print_result<At<2, Result>::result>();  // 6
+```
+
+**What it does:** Applies `DoubleFn` to every element in a type-level list.
+
+---
+
+## 🔀 Example 4: Tessellate a Function Over a List
+
+```cpp
+struct SquareFn {
+    template <typename T>
+    using apply = Int<T::value * T::value>;
+};
+
+using MyList = List<Int<1>, Int<2>, Int<3>>;
+using Result = Tessellate<SquareFn, MyList>::result;
+
+print_result<At<2, Result>::result>();  // 9
+```
+
+**What it does:** Uses `Tessellate` to square each number in a type-level list.
+
+---
+
+## 🕵️‍♂️ Bonus: Identity Metafunction
+
+```cpp
+using Same = Identity<Int<42>>::result;
+print_result<Same>();  // 42
+```
+
+**What it does:** Demonstrates a no-op type wrapper—returns the input as-is.
+
+---
