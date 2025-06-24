@@ -1,5 +1,42 @@
-# Tessellator
-An evaluation engine based on TMP that supports a declarative style of fractal (i.e. tile, tiling) programming
+# 🎯 Tessellator
+
+**Tessellator** is a C++ evaluation engine built using **Template Metaprogramming (TMP)**. It promotes a **declarative approach to fractal and tiling logic**, allowing complex computations to happen entirely at compile time through type-level constructs.
+
+---
+
+## 🧠 Key Features
+
+- **🧮 Type-Level Arithmetic**  
+  Arithmetic operations like `Add`, `Sub`, `Mul`, and `Div` are evaluated during compilation using the `Expr` and `Eval` templates.
+
+- **🧩 Functional Metaprogramming**  
+  Includes higher-order metafunctions such as `Apply`, `Compose`, and `Identity` to support functional-style programming.
+
+- **📦 Type-Level Lists & Utilities**  
+  Metaprogramming constructs like `List`, `Prepend`, `Map`, and `At` allow flexible list manipulation at the type level.
+
+- **🌐 Tessellation Engine**  
+  The `Tessellate` metafunction applies transformations across type-level structures to simulate a tile-based or recursive design system.
+
+- **🛠️ Debugging Utilities**  
+  The `print_result` runtime function bridges the compile-time realm with actual output for testing and inspection.
+
+---
+
+## 🧪 Example Use Cases
+
+- Compile-time math expression evaluation  
+- Procedural generation of fractal patterns  
+- Learning or demonstrating advanced TMP techniques  
+- Type-level explorations in generic C++ programming
+
+---
+
+## 🚀 Getting Started
+
+Clone the repo:
+```bash
+git clone https://github.com/radubm1/Tessellator.git
 
 ---
 
