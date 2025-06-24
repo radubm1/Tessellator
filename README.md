@@ -37,22 +37,24 @@
 Clone the repo:
 ```bash
 git clone https://github.com/radubm1/Tessellator.git
+```
+
+Compile and run:
+```bash
+cd Tessellator
+g++ -std=c++17 -o demo main.cpp
+./demo
+```
 
 ---
 
-# `meta_func.hpp` – Annotated
+## 📖 License
 
-A header for **type-level computations** in C++ using template metaprogramming.
+[MIT License](LICENSE)
 
-## Includes and Pragma
+---
 
-```cpp
-#pragma once
-#include <type_traits>
-#include <iostream>
-```
-- Ensures single inclusion.
-- Brings in traits for compile-time type info and `std::cout` for debugging.
+Happy tessellating! 🧵
 
 ## Type-Level Integers
 
